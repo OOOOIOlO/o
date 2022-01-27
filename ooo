@@ -4,9 +4,6 @@ skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, capt
 tun-excluded-routes = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.18.0.0/15, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32
 dns-server = system
 ipv6 = true
-update-url = https://suo.yt/1mq7cAY
-
-
 
 [Rule]
 FINAL,DIRECT
@@ -14,7 +11,9 @@ FINAL,DIRECT
 [Host]
 localhost = 127.0.0.1
 
-
-
 [Script]
-dniMX = type=http-request,script-path=https://suo.yt/2jqcZ13,pattern=https?:\/\/.*\.xmind\..*\/_res\/(devices|user_sub_status|appstore/sub),max-size=131072,requires-body=true,timeout=10,enable=true
+dniMX = type=http-request,script-path=https://suo.yt/2jqcZ13,pattern=https?:\/\/.*\.xmind\..*\/_res\/(devices|user_sub_status|appstore/sub),requires-body=true,timeout=10,enable=true
+
+[MITM]
+hostname = *.xmind.*
+enable = true
